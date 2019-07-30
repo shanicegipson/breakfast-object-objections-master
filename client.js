@@ -15,11 +15,32 @@ let refrigeratorContents  = {
 // You shouldn't need to change anything above this line initially
 // You may change it to test different scenarios, but it should work as is
 
-function breakfastChecker(contents) {
+function breakfastChecker(contents, guest) {
   // Your code goes here
+let breakfastGuest = 4;
+const eggsPerPerson = 2;
+const baconPerPerson = 3;
+const pancakesPerPerson = 3;
+const chocolateChipsPerPancake = 15;
+let eggQuantity = contents.eggs;
+let baconQuantity = contents.bacon;
+let pancakeQuanity = contents.pancakeMixBags * 10;
+let chocolateChipsQuantity = contents.chocolateChips;
+
+breakfastGuest = guest + breakfastGuest;
 
 
-
+if (eggQuantity >= (breakfastGuest * eggsPerPerson) && 
+  baconQuantity >= (breakfastGuest * baconPerPerson)){
+  return 'yes';
+}
+else if (pancakeQuanity >= (breakfastGuest * pancakesPerPerson) 
+  && contents.chocolateChips >= (breakfastGuest * pancakesPerPerson * chocolateChipsPerPancake)){
+  return 'yes';
+}
+else{
+  return 'no';
+}
 
 
 }
